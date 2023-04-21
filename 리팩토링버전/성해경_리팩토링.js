@@ -20,5 +20,4 @@ function exampleOne(inputPrice, currency, basicData) {
   }
 }
 
-
 exampleOne(1000, currency, basicData);

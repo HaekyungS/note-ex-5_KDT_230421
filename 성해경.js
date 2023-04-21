@@ -39,18 +39,38 @@ function exampleOne(inputPrice, currency, basicData){
 
   // Q2. 만약 inputPrice 가 1000원이라면 basicData 를 통해 구매 가능 제품을 console.log() 로 출력
   if(inputPrice === currency.thousand.value){
+    
+    // 구매 가능 품목을 담을 배열을 선언.
     let YouCanBuyItem = []
+
+    // forEach 매서드를 이용해 조건이 일치하는 품목만 배열에 추가.
     basicData.forEach((element)=>{
       if(element.price<=inputPrice){
       YouCanBuyItem.push(element.name);}
     })
+
+    // 모두 추가된 이 후, join 을 이용해, 배열을 문자열로 합쳐서 출력
     console.log(`지불하신 금액으로는 ${YouCanBuyItem.join()}을 구매 가능하십니다.`)
   }
 
   // Q3. 만약 inputPrice가 모든 제품의 가격보다 적다면, 잔액이 부족합니다. 라는 문구 출력
+  // every 를 사용 시, 콘솔 확인
+  // console.log(basicData.every((e)=>{
+  //   console.log(e.price)
+  //   return inputPrice<e.price
+  // }))
+
+  if(basicData.every((e)=>{
+
+    // 콘솔로 금액에 대해 조회 잘 되는지 확인.
+    // console.log(e.price)
+    return inputPrice<e.price
+  })){
+    console.log("잔액이 부족합니다.")
+  }
 
   // Q4. inputPrice가 모든 제품의 가격보다 많다면 "당신은 부자입니다." 문구 출력
 }
 
 
-exampleOne(1000, currency, basicData);
+exampleOne(100, currency, basicData);

@@ -38,6 +38,14 @@ function exampleOne(inputPrice, currency, basicData){
   }
 
   // Q2. 만약 inputPrice 가 1000원이라면 basicData 를 통해 구매 가능 제품을 console.log() 로 출력
+  if(inputPrice === currency.thousand.value){
+    let YouCanBuyItem = []
+    basicData.forEach((element)=>{
+      if(element.price<=inputPrice){
+      YouCanBuyItem.push(element.name);}
+    })
+    console.log(`지불하신 금액으로는 ${YouCanBuyItem.join()}을 구매 가능하십니다.`)
+  }
 
   // Q3. 만약 inputPrice가 모든 제품의 가격보다 적다면, 잔액이 부족합니다. 라는 문구 출력
 

@@ -70,7 +70,15 @@ function exampleOne(inputPrice, currency, basicData){
   }
 
   // Q4. inputPrice가 모든 제품의 가격보다 많다면 "당신은 부자입니다." 문구 출력
+  if(basicData.every((e)=>{
+
+    // 콘솔로 금액에 대해 조회 잘 되는지 확인.
+    // console.log(e.price)
+    return inputPrice>e.price
+  })){
+    console.log("당신은 부자입니다!")
+  }
 }
 
 
-exampleOne(100, currency, basicData);
+exampleOne(10000, currency, basicData);

@@ -23,6 +23,19 @@ const currency = {
 function exampleOne(inputPrice, currency, basicData){
   // Q1. inputPrice 가 1000원이라면 currency.thousand.name 을 반환
   // 일천원권을 넣었습니다 라는 문구를 콘솔로그로 출력
+  if(inputPrice === currency.thousand.value){
+    console.log(`${currency.thousand.name}을 넣었습니다.`)
+  }else if(inputPrice === currency.fiveThousand.value){
+    console.log(`${currency.fiveThousand.name}을 넣었습니다.`)
+  }else if(inputPrice === currency.tenThousand.value){
+    console.log(`${currency.tenThousand.name}을 넣었습니다.`)
+  }else if(inputPrice === currency.fiveHundred.value){
+    console.log(`${currency.fiveHundred.name}을 넣었습니다.`)
+  }else if(inputPrice === currency.hundred.value){
+    console.log(`${currency.hundred.name}을 넣었습니다.`)
+  }else{
+    console.log("지폐가 아닙니다. 지폐를 넣어주세요.")
+  }
 
   // Q2. 만약 inputPrice 가 1000원이라면 basicData 를 통해 구매 가능 제품을 console.log() 로 출력
 
@@ -30,5 +43,6 @@ function exampleOne(inputPrice, currency, basicData){
 
   // Q4. inputPrice가 모든 제품의 가격보다 많다면 "당신은 부자입니다." 문구 출력
 }
+
 
 exampleOne(1000, currency, basicData);
